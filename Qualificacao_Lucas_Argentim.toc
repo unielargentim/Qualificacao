@@ -1,0 +1,21 @@
+\select@language {portuges}
+\select@language {portuges}
+\select@language {english}
+\select@language {portuges}
+\select@language {english}
+\select@language {portuges}
+\contentsline {chapter}{\numberline {1}INTRODU\IeC {\c C}\IeC {\~A}O}{13}{chapter.1}
+\contentsline {chapter}{\numberline {2}ESTADO DA ARTE}{15}{chapter.2}
+\contentsline {chapter}{\numberline {3}METODOLOGIA}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}sEMG}{17}{section.3.1}
+\contentsline {section}{\numberline {3.2}Eletro Estimula\IeC {\c c}\IeC {\~a}o Neuro Muscular}{18}{section.3.2}
+\contentsline {section}{\numberline {3.3}Microcontrolador}{18}{section.3.3}
+\contentsline {section}{\numberline {3.4}Aplicativo}{19}{section.3.4}
+\contentsline {section}{\numberline {3.5}Volunt\IeC {\'a}rios}{20}{section.3.5}
+\contentsline {section}{\numberline {3.6}Procedimentos experimentais}{21}{section.3.6}
+\contentsline {section}{\numberline {3.7}Dados experimentais coletados}{21}{section.3.7}
+\contentsline {section}{\numberline {3.8}Processamento e an\IeC {\'a}lise de dados coletados}{22}{section.3.8}
+\contentsline {chapter}{\numberline {4}RISCOS}{23}{chapter.4}
+\contentsline {chapter}{\numberline {5}CRONOGRAMA DE EXECU\IeC {\c C}\IeC {\~A}O}{24}{chapter.5}
+\contentsline {chapter}{\numberline {6}FINANCIAMENTO}{25}{chapter.6}
+\contentsline {chapter}{\numberline {7}EQUIPE EXECUTORA}{26}{chapter.7}

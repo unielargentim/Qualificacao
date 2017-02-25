@@ -1,0 +1,345 @@
+\documentclass[rascunho,xindy]{fei}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs, multicol, multirow}
+
+%%%% -- Configuracoes Iniciais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Lucas Malassise Argentim}
+\title{Aplicação clínica do estimulador elétrico neuromuscular ativado por EMG}
+\subtitulo{Uma parceria realizada com o IMREA HC FMUSP - Rede de Reabilitação Lucy Montoro}
+
+%\cidade{Cidade}
+%\instituicao{Instituição de Ensino}
+
+%%%% -- Entradas Listas de Abreviaturas e Simbolos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Abreviaturas
+%\newacronym[longplural=Computational Aided Design]{cad}{CAD}{Computational Aided Design}
+%\newacronym[longplural=Centro Universitário da FEI]{fei}{FEI}{Centro Universitário da FEI}
+%% -- Simbolos
+%\newglossaryentry{A}{type=symbols,name={\ensuremath{A}},sort=a,description={exchanger total heat transfer area, $m^2$}}
+%\newglossaryentry{G}{type=symbols,name={\ensuremath{G}},sort=g,description={exchanger flow-stream mass velocity, $kg/(s m^2)$}}
+%\newglossaryentry{f}{type=symbols,name={\ensuremath{j}},sort=j,description={friction factor, dimensionless}}
+%\newglossaryentry{deltap}{type=symbols,name={\ensuremath{\Delta P}},sort=p,description={pressure drop, $Pa$}}
+%\newglossaryentry{nu}{type=symbols,name={\ensuremath{\nu}},sort=b,description={specific volume, $m^3/kg$}}
+%\newglossaryentry{beta}{type=symbols,name={\ensuremath{\beta}},sort=b,description={ratio of free-flow area $A_{ff}$ and frontal area $A_{fr}$ of one side of exchanger, dimensionless}}
+%\newglossaryentry{fr}{type=symbols,name={\ensuremath{fr}},sort=fr,description={frontal}}
+%\newglossaryentry{in}{type=symbols,name={\ensuremath{i}},sort=in,description={inlet}}
+%\newglossaryentry{out}{type=symbols,name={\ensuremath{o}},sort=out,description={outlet}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeindex
+\makeglossaries
+
+\begin{document}
+
+\maketitle
+
+\begin{folhaderosto}
+Dissertação de Mestrado, apresentada ao Centro Universitário da FEI para obtenção do título de Mestre em Engenharia Elétrica. Orientado pela Prof. Dra. Maria Cláudia Ferrari de Castro.
+\end{folhaderosto}
+
+\fichacatalografica
+
+\folhadeaprovacao
+
+\dedicatoria{A quem eu quero dedicar o texto.}
+
+\begin{agradecimentos}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quam turpis, ullamcorper quis laoreet ac, malesuada sed mi. Quisque orci nunc, placerat quis mauris vel, luctus dictum tellus. Ut aliquam dui nunc, quis commodo justo mattis aliquam. Nam congue libero nec dui auctor pharetra. Sed sit amet justo sodales, elementum massa quis, luctus ipsum. Ut et libero mattis, rhoncus nisi vitae, facilisis sapien. Aliquam erat volutpat. Mauris eget libero egestas, ullamcorper leo quis, convallis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+\end{agradecimentos}
+
+
+\epigrafe{Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.\nocite{dyer2010edison}}
+
+\begin{resumo}
+
+Este trabalho propõe a aplicação de um estimulador elétrico neuromuscular (EENM) ativado por biopotenciais, capturados através de eletromiografia de superfície (sEMG), em pacientes com hemiplegia ocasionada por Acidente Vascular Cerebral (AVE). O dispositivo possui conexão via bluetooth com smartphone para que parâmetros de calibração possam ser enviados e estatísticas sobre a utilização possam ser capturadas e acompanhadas remotamente por profissionais da saúde, sendo esta a inovação do dispositivo apresentado.
+	
+Ao longo dos anos, os projetos desenvolvidos nesta instituição utilizaram voluntários com plenas capacidades motoras para a realização de experimentos. Ainda que derivando resultados de grande valia, essa abordagem pode distorcer a real efetividade de métodos e dispositivos quando aplicados em pacientes diagnosticados com deficiência ou restrições motoras. 
+
+A órtese foi desenvolvida para ser utilizada no antebraço, proporcionando conforto ao paciente durante o processo de reabilitação. O aparelho é equipado com eletrodos de superfície responsáveis pela captura dos sinais de sEMG e também pela estimulação elétrica neuromuscular. Ambas as técnicas já são amplamente conhecidas e extensamente utilizadas no tratamento fisioterápico. A aquisição dos sinais de sEMG, a eletro estimulação e a troca de informações via bluetooth serão gerenciados por um microcontrolador.
+
+Os resultados serão apresentados de maneira a concluir-se que a utilização da órtese EENM ativada por sEMG contribui notavelmente para o processo de reabilitação e na qualidade de vida de pacientes com disfunções motoras.
+
+Dadas as contribuições que uma órtese ativa de baixo custo possa trazer, espera-se que esse dispositivo torne-se versátil suficiente a ponto de torná-lo um item de uso contínuo fora das atividades de reabilitação, sendo incorporado ao dia a dia dos pacientes até que seu uso seja dispensável.  
+
+
+%\palavraschave{Biomédica, sEMG, EENM, FES, Órtese}
+
+\end{resumo}
+
+
+\begin{abstract}
+
+This work proposes the application of a biopotential activated neuromuscular electric stimulator (NMES), captured by surface electromyography (sEMG), in patients with hemiplegia caused by stroke. The device has a Bluetooth connection with a smartphone so that calibration parameters can be sent and usage statistics can be captured and monitored remotely by healthcare professionals, which is the innovation of the device presented.
+
+Over the years, the projects developed at this institution have used volunteers with full motor skills to conduct experiments. Although deriving results of great value, this approach can distort the actual effectiveness of methods and devices when applied in patients diagnosed with disability or motor restrictions.
+
+The orthosis was developed to be used on the forearm, providing comfort to the patient during the rehabilitation process. The apparatus is equipped with surface electrodes responsible for the capture of sEMG signals and also by neuromuscular electrical stimulation. Both techniques are already widely known and widely used in physiotherapeutic treatment. The acquisition of the signals of sEMG, the electro stimulation and the exchange of information via Bluetooth will be managed by a microcontroller.
+
+The results will be presented in order to conclude that the use of sEMG-activated NMES orthosis contributes significantly to the rehabilitation process and the quality of life of patients with motor dysfunction.
+
+Given the contributions that a low-cost active orthosis can bring, it is expected that this device will become versatile enough to make it an item of continuous use outside of rehabilitation activities, being incorporated into patients' daily lives until its use is dispensable.
+
+%\palavraschave{Biomedics, sEMG, NMES, FES, Orthosis}
+
+\end{abstract}
+
+\listoffigures
+\listoftables
+\listofalgorithms
+\glsaddall
+\printglossaries
+\tableofcontents
+
+\chapter{INTRODUÇÃO}
+
+As técnicas para reabilitação de indivíduos com deficiência motora decorrente de AVE, popularmente conhecido como derrame, são amplamente exploradas pela comunidade científica, uma vez que esta condição é observada em 6 milhões de cidadãos no Brasil por ano,  e é responsável por 40\% das aposentadorias precoces [FONTE MINISTERIO DA SAUDE]. Em todo o mundo, 30\% a 60\% dos pacientes ficam com os membros superiores comprometidos [FONTE OMS] em decorrência do evento.
+
+O AVE consiste em um déficit neurológico que ocorre quando há a falta de circulação sanguínea adequada em uma determinada área cerebral, seja por obstrução (isquêmico) ou rompimento (hemorrágico) de vasos sanguíneos. Fatores associados à ocorrência de um AVE incluem hábitos como dieta inadequada, sedentarismo e o próprio envelhecimento natural de um indivíduo. Como consequência, comumente observa-se sequelas motoras decorrentes da morte de células cerebrais em áreas responsáveis por esta tarefa. 
+%\cite{radanovic2000caracteristicas}.
+
+A espasticidade é uma alteração causada no controle da musculatura esquelética, ocasionada por um desequilíbrio dos sinais provenientes do  Sistema Nervoso Central (SNC) para as terminações nervosas dos músculos. Como consequência, observa-se uma hipertonia muscular que impossibilita a ativação voluntária para execução de movimentos. Como exemplo, o padrão flexor do punho e dedos é uma condição comumente observada nesses indivíduos, o que impossibilita realizar tarefas comuns do cotidiano que utilizam-se da movimentação desses membors de maneira independente, como pentear o cabelo, escovar os dentes, digitar no teclado de um computador, etc. 
+
+Encontra-se inúmeros relatos de que a perda de independência está diretamente associada a sanidade mental dessas pessoas, ou seja, nota-se uma diminuição considerável no nível de qualidade de vida cognitiva ou emocional, a qual pode tornar-se um quadro de depressão em um curto período de tempo. Essa condição certamente influencia de maneira considerável o processo de reabilitação, uma vez que pacientes em tratamento podem perder o interesse pelos programas nos quais estão inseridos. 
+
+
+
+%Dentre as técnicas mais utilizadas no processo de reabilitação motora funcional, pode-se citar a Terapia de Movimento Induzido pela restrição (TMIR), onde um conjunto padrão de tarefas para alcançar, agarrar e pinçar são usadas de maneira forçada a estimular intensivamente o uso do membro afetado ao invés do membro não afetado.  
+%No âmbito de técnicas que utilizam-se da eletro-estimulação, podemos citar a Estimulação Elétrica Funcional (FES), que tem como base produzir a contração muscular através de uma série de estímulos elétricos com duração e frequência específicos.
+%
+
+Feitas as considerações acima, o objetivo deste trabalho é construir uma órtese de baixo custo, viabilizando não somente sua utilização em locais destinados à reabilitação de pacientes, mas também durante o dia a dia desses indivíduos. Para isso, serão empregadas tecnologias que permitem a captura de biopotenciais e realizar eletro-estimulação muscular de maneira simples e efetiva. O protótipo deverá ser capaz de detectar intenções de movimentos realizadas pelo indivíduo e auxiliá-lo a concluir o movimento através da eletro-estimulação. A calibração dos parâmetros de ativação, intensidade de corrente da estimulação e modo de utilização deverão ser customizáveis para cada pessoa através de um aplicativo instalado em um smartphone. O envio de informações sobre o paciente para um banco de dados na nuvem permitirá que o profissional da saúde acompanhe a utilização do dispositivo e envie informações para o paciente.
+
+
+
+\chapter{ESTADO DA ARTE}
+
+[UNDER CONSTRUCTION... PLEASE IGNORE]
+
+Diversos estudos foram realizados com o objetivo de desenvolver dispositivos de reabilitação, podendo citar como órteses e próteses ativas multifuncionais. Para tal, o aprimoramento de técnicas de reconhecimento de padrões em sinais de sEMG são de suma importância para que se possa distinguir e classificar características peculiares de cada sinal obtido de um indivíduo, com o intuito de projetar malhas de controle robustas e confiáveis. \cite{graupe1982multifunctional}. Para a extração das características do sinal, alguns métodos que possuem destaque em  diversas linhas de pesquisa de biopotenciais são: modelo autoregressivo (AR) \cite{matrone2012real}, análise de componentes principais (PCA)  \cite{graupe1975functional}, raiz quadrática média (RMS) \cite{Shenoy2008}, modelo autoregressivo de média móvel (ARMA)  \cite{castro2014semg}, entre outros. 
+No âmbito de classificadores, podemos citar técnicas como: Análise Discriminante Linear (LDA) \cite{young2013classification,tkach2010study}, Máquinas de Vetores de Suporte (SVM) \cite{lorrain2011influence,leon2011} e Redes Neurais Artificiais (ANN) \cite{amsuss2014self}, entre outros.
+
+Trazendo a discussão de interfaces e interações para o universo clínico, inúmeras aplicações estão sendo desenvolvidas para auxiliar pacientes em seus processos de reabilitação. Diante de uma enorme gama de trabalhos apresentados na literatura, podemos citar alguns notáveis que utilizam-se dos conceitos de modelagem e design adaptativo baseados em personas. Pacientes diagnosticados com disfunções motoras por conta de AVEs possuem algumas características cognitivas comuns, entretanto podemos lidar com diferentes portes físicos, crenças, familiaridade com tecnologia, etc. 
+
+Por esses e diversos outros motivos, aplicações envolvendo Estimulação Elétrica Funcional tele-supervisionadas estão entra as opções escolhidas por profissionais do ramo. Em \cite{buick2016tele}, foram montadas 10 estações de trabalho nas casas de pacientes que sofreram um AVE, com o intuito de fazer uma intervenção visual (na forma de 10 jogos diferentes) em seus exercícios terapêuticos, orientados por um treinador remotamente. O trabalho provou que há ganhos expressivos nas funções motoras dos pacientes quando o estímulo visual é combinado com a eletroestimulação. Durante 6 semanas, realizando atividades com 1 hora de duração por dia, os pacientes participaram de sessões supervisionadas de exercícios funcionais, instruídos pelo profissional da saúde que se comunicava pela estação de trabalho.
+
+Analogamente, o uso de realidade aumentada com o intuito de desenvolver a neuroplasticidade dos pacientes em recuperação está sendo explorado em trabalhos como \cite{triponyuwasin2014brain}. Os autores utilizaram a leitura de sinais de eletroencefalografia (EEG) para alimentar um sistema 	de realidade aumentada, processando e classificando o movimento de acordo com as características das ondas obtidas (intenção de movimentação da perna ou braço afetado). O sistema de realidade aumentada então ativa o controlador do dispositivo de reabilitação, o qual promove um \textit{feedback} diretamente no membro do paciente (exercício funcional normalmente realizado por profissionais em rotinas de reabilitação). Os resultados obtidos novamente provaram que a utilização de um dispositivo de realidade aumentada, interagindo direta e ativamente com o paciente, promove uma aceleração no processo reconstrução de funções motoras e neuroplasticidade.
+
+Em \cite{dobkin2007brain}, os pesquisadores  discutem os efeitos das interfaces cérebro-computador em processos de reabilitação. Em um âmbito geral, esses dispositivos buscam reduzir esforços físicos durante o tratamento e aumentar a atividade cognitiva do paciente. A neuroplasticidade novamente torna-se o foco dos estudos, uma vez que  pacientes nas mais diversas condições de capacidade motora e cognitiva estão sendo utilizados para estudo dessas interfaces. O desafio certamente torna-se maior quando o candidato não possui movimento algum ou mesmo consegue se comunicar verbalmente, o que implica em um \textit{design} versátil o suficiente para atender toda essa gama de possibilidades de usuários. 
+
+Além disso, aplicações que vão além de tratamentos clínicos foram desenvolvidas para que usuários em condições de restrição motora e funcional ainda possam interagir com o mundo externo através da internet. Em \cite{karim2006neural}, os autores apresentam a funcionalidade de uma interface cérebro-computador que permite a navegação em um \textit{web browser} através de biopotenciais provenientes da atividade cerebral. 
+
+
+\chapter{METODOLOGIA}
+
+Com o intuito de desenvolver a órtese de EENM ativada por sEMG, serão apresentados os itens que irão compô-la. Ao final de cada sessão, será provida uma breve explicação de como o item irá tomar parte no protótipo.
+
+
+\section{sEMG}
+
+O sinal mioelétrico é originado à partir da contração muscular, que por sua vez produz diferentes potenciais ao longo do tecido muscular. Através da eletromiografia de superfície (sEMG), esses potenciais podem ser adquiridos utilizando eletrodos na superfície da pele \cite{merletti2004}. O correto posicionamento dos eletrodos é fundamental para bons resultados na captura do sinal \cite{farrell2008comparison}.
+
+Este registro permite a investigação de quais músculos estão envolvidos durante a execução de uma determinada atividade, podendo ser empregado na operação de dispositivos de tecnologia assistiva, clinicamente na avaliação de patologias neuro musculares, em jogos eletrônicos e outras interfaces homem máquina.
+
+O sinal de sEMG é de caráter estocástico, podendo ser representado por uma função de distribuição Gaussiana. Sua amplitude varia para cada tipo de músculo, mas tipicamente os valores são compreendidos entre 0 a 10 mV (pico a pico), com banda de frequência válida de 0 a 500Hz, ainda que o sinal tenha maior concentração de energia entre 0 e 250Hz \cite{deluca2002surface}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{images/signalEMG.jpg}
+\caption{Caracterização típica do sinal de EMG. [CITAR REFERENCIA DA FIGURA]}
+\label{signalEMG}
+\end{figure}
+
+O dispositivo escolhido para captar os sinais de sEMG é o MyoWare Muscle Sensor, fabricado pela Advancer Technologies.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.75]{images/MyoWare.png}
+\caption{ MyoWare Muscle Sensor - Advancer Technologies [REFERENCIA IMAGEM]}
+\label{MyoWare}
+\end{figure}
+
+
+O valor deste componente vai de encontro com a proposta deste projeto. Estima-se que o custo para a aquisição seja de R\$100.00
+
+\section{Eletro Estimulação Neuro Muscular}
+
+[UNDER CUNSTRUCTION... PLEASE IGNORE]
+
+
+\section{Microcontrolador}
+
+A plataforma escolhida para este projeto é o Adafruit Feather 32u4 Bluefruit [REFERENCIA SITE].
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.25]{images/bluefruit.jpg}
+\caption{ Adafruit Feather 32u4 Bluefruit [REFERENCIA IMAGEM]}
+\label{bluefruit}
+\end{figure}
+
+A placa possui um  processador ATmega32u4 com as seguintes características:
+
+\begin{itemize}
+\item[Clock de 8 Mhz]
+\item[Regulador de voltagem 3.3V com corrente máxima de saída de 500 mA]
+\item[Suporte USB nativo (bootloader e debugger serial)]
+\item[20 pinos General Purpose Input Output (GPIO)]
+\item[Comunicação serial, I2C e SPI]
+\item[8 pinos de Pulse Width Modulation (PWM)]
+\item[10 entradas analógicas)]
+\item[Carregador de baterias de Lítio Polímero (LiPo) de 100mA embutido]
+\end{itemize}
+
+Já integrado com microcontrolador, a placa possui um módulo Bluetooth Nordic nRF51822, permitindo que dados sejam enviados e recebidos para dispositivos compatíveis com essa tecnologia.
+
+O microcontrolador será encarregado de processar as informações provenientes do circuito de EMG, identificando a tentativa de contração muscular e ativando o circuito de estimulação. Desta maneira, é possível desvincular-se dos processos convencionais de estimulação passiva e introduzir maior dinamismo nas atividades de reabilitação.
+
+O valor deste componente vai de encontro com a proposta deste projeto. Estima-se que o custo para a aquisição seja de R\$120.00
+
+
+\section{Aplicativo}
+
+O desenvolvimento de um aplicativo para a operação da órtese e transmissão de dados será o grande diferencial do projeto. A comunicação via bluetooth irá permitir que cada usuário configure a órtese de maneira singular, atendendo individualmente as necessidades de acordo com o grau de deficiência motora e sensibilidade ao estímulo elétrico.
+
+A modelagem de usuários consiste em transcrever as mais diversas características dos operadores para dentro de um ambiente computacional. Este processo é vastamente utilizado para que os desenvolvedores possam gerenciar de maneira customizada as inúmeras camadas existentes em uma aplicação, criando uma experiência de utilização otimizada baseada no modelo de usuário que o operador eventualmente será enquadrado \cite{fischer2001user}. De maneira genérica, uma boa modelagem deve ser capaz de capturar aspectos comportamentais de interações passadas com o sistema, podendo se adaptar mediante variações de utilização. 
+
+Ao vestir a órtese, o usuário será submetido a rotinas de calibração de qualidade de recepção sensorial dos eletrodos, intensidade do estímulo elétrico muscular e modo de utilização. A efetividade da comunicação com o usuário é chave para a aceitação do dispositivo, uma vez que a proposta de produzir estímulos elétricos diretamente em uma pessoa, usualmente causa o sentimento de medo e desconfiança.
+
+A atividade de calibração consiste em  garantir a qualidade de recepção sensorial dos eletrodos posicionados no antebraço (mais precisamente sobre a musculatura responsável pela extensão do punho e dedos, o flexor radial do carpo e dos dedos), regular intensidade do estímulo elétrico muscular gerado a partir de um sistema controlador de corrente, e modo de utilização (no qual deve indicar a quantidade de séries de repetições a órtese deve auxiliá-lo com a eletroestimulação).
+
+A transmissão de informações de utilização para uma base de dados na nuvem permite que os profissionais da saúde monitorem remotamente o progresso feito pelo paciente. Eventuais ajustes e instruções podem ser enviados diretamente ao aplicativo para que o usuário da órtese possua acompanhamento contínuo durante o processo de reabilitação fora do ambiente clínico. 
+
+\section{Voluntários}
+
+Para este estudo, a aplicação clínica deste dispositivo destina-se a pacientes com quadros de hemiplegia espástica, ocasionando enrijecimento juntamente ao enfraquecimento da musculatura. 
+A órtese tem como propósito auxiliar o paciente a concluir movimentos de extensão de punho e dedos que tenham sido prejudicados após o AVE. 
+
+\begin{figure}[!htb]
+\centering
+\includegraphics{images/extencao.jpg}
+\caption{Movimento de extensão do punho e dedos [REFERENCIA IMAGEM]}
+\label{extensao}
+\end{figure}
+
+Deste modo, pacientes com padrão flexor de punho e que possuam movimentos do braço e ombro preservados são mais indicados para serem submetidos ao tratamento, ainda que o dispositivo possa auxiliar, de maneira menos representativa, pacientes com quadros diferentes do recomendado.
+
+Espera-se conseguir uma amostra de ao menos 10 pacientes nas condições acima citadas, sendo cinco homens e cinco mulheres, de forma a poder dividi-los em dois grupos (um que irá utilizar a órtese juntamente ao programa de reabilitação, e outro que seguirá apenas o programa regular) para avaliar a portabilidade e eficácia da órtese quando utilizada por indivíduos com características anatômicas e fisiológicas distintas.
+
+Após a leitura do termo de consentimento livre e esclarecido, será necessário que o assinem caso estejam de acordo.
+
+\section{Procedimentos experimentais}
+
+O experimento a ser realizado consiste em introduzir a utilização da órtese ao programa de reabilitação dos pacientes, dentro e fora do ambiente clínico.
+
+Antes de iniciar o uso do aparelho, exames de aptidão motora deverão ser realizados para que se defina uma linha base da evolução do tratamento do voluntário. Ao término de cada semana, os pacientes serão novamente avaliados, nos mesmos testes do início do tratamento, com o intuito de registrar o grau de evolução obtido no período de 7 dias. Esta frequência poderá ser ajustada de acordo com o parecer técnico do corpo médico responsável pelos programas de reabilitação.
+
+O primeiro dia da utilização do dispositivo será acompanhado juntamente com os responsáveis pelo projeto, os quais deverão passar instruções de utilização e garantir que os parâmetros configuráveis estão de acordo com as condições de cada paciente.
+
+Para que se possa otimizar os resultados esperados com o experimento, sessões de feedback serão feitas com os voluntários procurando ouvi-los à respeito da utilização da órtese. Eventualmente, correções e adaptações no dispositivo poderão ser efetuadas para preservar seu bem estar e garantir que seu tratamento não seja prejudicado.
+
+
+\section{Dados experimentais coletados}
+
+Ao longo do período de avaliação, poderá ser observada a evolução individual de cada paciente através de relatórios contendo os resultados dos testes funcionais disponíveis na clínica.
+
+Os testes deverão ser executados ao término de cada semana durante o programa de reabilitação do indivíduo, encaminhados para o corpo médico responsável (parecer técnico) e para os integrantes do projeto, responsáveis pela análise comparativa entre os demais pacientes. Esta frequência poderá ser ajustada de acordo com o parecer técnico do corpo médico responsável pelos programas de reabilitação.
+
+
+\section{Processamento e análise de dados coletados}
+
+Após o término das 12 semanas, os dados coletados serão dispostos de maneira a estabelecer critérios de comparação entre os grupos de pacientes observados. O intuito dessa atividade é medir o grau de influência positiva da utilização da órtese durante as sessões de fisioterapia de um paciente vítima de um AVE.
+
+Indicadores de performance serão criados e traduzidos em formato visual (dashboards) para facilitar análises comparativas. Para isso, serão utilizado softwares de processamento de sinais, análises estatísticas e analytics, os quais irão consumir conteúdo do banco de dado sque foi enviado pelo aplicativo de cada um dos participantes que utilizaram a órtese.
+
+
+\chapter{RISCOS}
+
+A eletroestimulação pode gerar reações na pele, como por exemplo, vermelhidão e pequenas irritações, risco de choques de maior intensidade devido à má utilização do equipamento, dores musculares ou espasmos. Na presença destes sintomas, a utilização será interrompida.
+
+Em função do esforço realizado durante as repetições dos movimentos, poderá haver um desconforto devido à fadiga muscular no antebraço e braço. Contudo, como forma de evitar essa condição, será imposto um período de descanso durante as atividades propostas, ou quando o paciente julgar necessário.
+
+A partir da correta execução do procedimento, o paciente estará sujeito a riscos mínimos, não havendo nenhuma evidência específica de alguma consequência imediata ou tardia.
+
+
+\chapter{CRONOGRAMA DE EXECUÇÃO}
+
+
+% ############################################################################
+% WARNING!
+% Substituir pelo seu cronograma de execução (tabela ou imagem).
+% Mantenha esse formato mês/ano, para ficar semelhante ao padrão que deverá ser
+% preenchido na Plataforma Brasil.
+% ############################################################################
+
+%% Table generated by Excel2LaTeX from sheet 'Sheet1'
+%\begin{table}[htbp]
+%  \centering
+%  \caption{Add caption}
+%    \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
+%    \toprule
+%    \multicolumn{1}{|c|}{\textbf{Ano}} & \multicolumn{8}{c|}{\textbf{2017}}                            & \multicolumn{2}{c|}{\textbf{2018}} \\
+%    \midrule
+%    \multicolumn{1}{|c|}{\textbf{Mês}} & \multicolumn{1}{c|}{\textbf{5}} & \multicolumn{1}{c|}{\textbf{6}} & \multicolumn{1}{c|}{\textbf{7}} & \multicolumn{1}{c|}{\textbf{8}} & \multicolumn{1}{c|}{\textbf{9}} & \multicolumn{1}{c|}{\textbf{10}} & \multicolumn{1}{c|}{\textbf{11}} & \multicolumn{1}{c|}{\textbf{12}} & \multicolumn{1}{c|}{\textbf{1}} & \multicolumn{1}{c|}{\textbf{2}} \\
+%    \midrule
+%    Apresentação do protótipo para coordenação de voluntários externos (FMUSP) & \cellcolor[rgb]{ .749,  .749,  .749}  &       &       &       &       &       &       &       &       &  \\
+%    \midrule
+%    Submissão do protocolo de teste ao comitê de ética & \cellcolor[rgb]{ .749,  .749,  .749}  &       &       &       &       &       &       &       &       &  \\
+%    \midrule
+%    Captura de requerimentos para o dashboard de indicadores & \cellcolor[rgb]{ .749,  .749,  .749}  &       &       &       &       &       &       &       &       &  \\
+%    \midrule
+%    Testes do protótipo com voluntários externos (FMUSP) &       & \cellcolor[rgb]{ .749,  .749,  .749}  &       &       &       &       &       &       &       &  \\
+%    \midrule
+%    Ajustes finais do protótipo &       & \cellcolor[rgb]{ .749,  .749,  .749}  &       &       &       &       &       &       &       &  \\
+%    \midrule
+%    Coleta de dados com voluntários &       &       & \cellcolor[rgb]{ .749,  .749,  .749}  & \cellcolor[rgb]{ .749,  .749,  .749}  & \cellcolor[rgb]{ .749,  .749,  .749}  & \cellcolor[rgb]{ .749,  .749,  .749}  &       &       &       &  \\
+%    \midrule
+%    Análise de dados coletados &       &       & \cellcolor[rgb]{ .749,  .749,  .749}  & \cellcolor[rgb]{ .749,  .749,  .749}  & \cellcolor[rgb]{ .749,  .749,  .749}  & \cellcolor[rgb]{ .749,  .749,  .749}  &       &       &       &  \\
+%    \midrule
+%    Desenvolvimento do  projeto final (estimulador + app + dashboard) &       &       & \cellcolor[rgb]{ .749,  .749,  .749}  & \cellcolor[rgb]{ .749,  .749,  .749}  & \cellcolor[rgb]{ .749,  .749,  .749}  & \cellcolor[rgb]{ .749,  .749,  .749}  &       &       &       &  \\
+%    \midrule
+%    Apresentação do  projeto final (estimulador + app + dashboard) &       &       &       &       &       &       & \cellcolor[rgb]{ .749,  .749,  .749}  &       &       &  \\
+%    \midrule
+%    Submissão de artigos em congressos e revistas &       &       &       &       &       &       &       & \cellcolor[rgb]{ .749,  .749,  .749}  &       &  \\
+%    \midrule
+%    Preparação Defesa &       &       &       &       &       &       &       & \cellcolor[rgb]{ .749,  .749,  .749}  & \cellcolor[rgb]{ .749,  .749,  .749}  &  \\
+%    \midrule
+%    Defesa &       &       &       &       &       &       &       &       &       & \cellcolor[rgb]{ .749,  .749,  .749}  \\
+%    \bottomrule
+%    \end{tabular}%
+%  \label{tab:addlabel}%
+%\end{table}%
+%
+
+\chapter{FINANCIAMENTO}
+
+Este será sendo financiado pela própria instituição. Não há financiamento específico de modo que não ser apresentado nenhuma planilha de custos. A presente pesquisa está sendo desenvolvida segundo recursos de uso corrente na instituição, sem nenhuma alocação específica. Ou seja, para o desenvolvimento do estudo, hora submetido à apreciação do comitê de ética, não há alocação específica de recursos.
+
+[PLANILHA DE CUSTOS]
+
+
+\chapter{EQUIPE EXECUTORA}
+
+\begin{tabular}{| r || l |}
+    \hline
+        Nome:   & Lucas Malassise Argentim \\ \hline
+        CPF:    & 336.028.908-05 \\ \hline
+        Lattes: & http://lattes.cnpq.br/9030106903858961 \\ \hline
+    \hline
+        Nome:   & Maria Claudia Ferrari de Castro \\ \hline
+        CPF:    & 104.951.588-95 \\ \hline
+        Lattes: & http://lattes.cnpq.br/7429780004238103 \\
+    \hline
+\end{tabular}
+
+
+\bibliography{referencias}
+
+\printindex
+
+\end{document}
